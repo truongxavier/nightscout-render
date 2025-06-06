@@ -3,7 +3,8 @@ services:
     name: nightscout-xavier
     env: image
     plan: free
-    image: nightscout/cgm-remote-monitor:latest
+    image:
+      url: nightscout/cgm-remote-monitor:latest
     envVars:
       - key: MONGO_URI
         value: mongodb+srv://nightscout_user:UnBonMotDePasse2025@glycemie-xtr.ztdhxsk.mongodb.net/?retryWrites=true&w=majority&appName=glycemie-xtr
@@ -16,6 +17,6 @@ services:
       - key: TZ
         value: Europe/Paris
       - key: PORT
-        value: 1337
+        value: "1337"
       - key: DISABLE_MINIFY
-        value: true
+        value: "true"
