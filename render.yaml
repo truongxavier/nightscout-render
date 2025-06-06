@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: nightscout-xavier
+    env: docker
+    plan: free
+    image: nightscout/cgm-remote-monitor:latest
+    envVars:
+      - key: MONGO_URI
+        value: mongodb+srv://nightscout_user:UnBonMotDePasse2025@glycemie-xtr.ztdhxsk.mongodb.net/?retryWrites=true&w=majority&appName=glycemie-xtr
+      - key: API_SECRET
+        value: UnBonMotDePasse2025
+      - key: ENABLE
+        value: careportal basal iob cob pump
+      - key: DISPLAY_UNITS
+        value: mmol
+      - key: TZ
+        value: Europe/Paris
+      - key: PORT
+        value: 1337
+      - key: DISABLE_MINIFY
+        value: true
