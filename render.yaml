@@ -3,8 +3,8 @@ services:
     name: nightscout-xavier
     env: docker
     plan: free
-    image:
-      url: nightscout/cgm-remote-monitor:latest
+    buildCommand: ""
+    startCommand: ""
     envVars:
       - key: MONGO_URI
         value: mongodb+srv://nightscout_user:UnBonMotDePasse2025@glycemie-xtr.ztdhxsk.mongodb.net/?retryWrites=true&w=majority&appName=glycemie-xtr
