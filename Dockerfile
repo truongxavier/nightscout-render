@@ -7,9 +7,11 @@ WORKDIR /app
 # Install dependencies
 RUN npm install
 
-# Expose the Render-assigned port
-ENV PORT=${PORT:-1337}
-EXPOSE ${PORT}
+# Expose the port passed by Render
+EXPOSE 10000
 
-# Lancement de Nightscout
-CMD ["npm", "start"]
+# Force PORT injection at runtime
+ENV PORT=10000
+
+# Start Nightscout with the right port
+CMD ["node", "server.js"]
