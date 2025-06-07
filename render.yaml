@@ -3,10 +3,11 @@ services:
     name: nightscout-xavier
     env: docker
     plan: free
-    dockerfilePath: Dockerfile
+    image:
+      url: nightscout/cgm-remote-monitor:latest
     envVars:
       - key: MONGO_URI
-        value: mongodb+srv://nightscout_user:UnBonMotDePasse2025@glycemie-xtr.ztdhxsk.mongodb.net/nightscout?retryWrites=true&w=majority&appName=glycemie-xtr
+        value: mongodb+srv://nightscout_user:UnBonMotDePasse2025@glycemie-xtr.ztdhxsk.mongodb.net/?retryWrites=true&w=majority&appName=glycemie-xtr
       - key: API_SECRET
         value: UnBonMotDePasse2025
       - key: ENABLE
@@ -15,7 +16,5 @@ services:
         value: mmol
       - key: TZ
         value: Europe/Paris
-      - key: PORT
-        value: "1337"
       - key: DISABLE_MINIFY
-        value: "true"
+        value: true
